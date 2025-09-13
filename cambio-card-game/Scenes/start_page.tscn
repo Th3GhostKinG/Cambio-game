@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyfel3cm3arj6"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uct8o"]
+orientation = 2
+
+[sub_resource type="Gradient" id="Gradient_mx1rd"]
+colors = PackedColorArray(0, 0.564706, 0.317647, 1, 0.305882, 0.796078, 0.392157, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_urypa"]
+gradient = SubResource("Gradient_mx1rd")
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otqub"]
+bg_color = Color(0.102944, 0.430899, 0.242469, 1)
+shadow_color = Color(0.0313726, 0.407843, 0.105882, 0.6)
+shadow_size = 3
+shadow_offset = Vector2(3, 3)
+
+[node name="startPage" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(576.5, 324)
+scale = Vector2(577.5, 325)
+mesh = SubResource("PlaneMesh_uct8o")
+texture = SubResource("GradientTexture2D_urypa")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 424.0
+offset_top = 242.0
+offset_right = 716.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_otqub")
+text = "Play"
