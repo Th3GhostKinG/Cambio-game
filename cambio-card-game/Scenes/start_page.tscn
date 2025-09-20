@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyfel3cm3arj6"]
+[gd_scene load_steps=6 format=3 uid="uid://dyfel3cm3arj6"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_uct8o"]
 orientation = 2
@@ -11,9 +11,15 @@ gradient = SubResource("Gradient_mx1rd")
 fill_from = Vector2(1, 1)
 fill_to = Vector2(0, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_huqjx"]
+bg_color = Color(0.101961, 0.560784, 0.243137, 1)
+shadow_color = Color(0.12549, 0.596078, 0.211765, 1)
+shadow_size = 3
+shadow_offset = Vector2(3, 3)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otqub"]
 bg_color = Color(0.102944, 0.430899, 0.242469, 1)
-shadow_color = Color(0.0313726, 0.407843, 0.105882, 0.6)
+shadow_color = Color(0.0313726, 0.407843, 0.105882, 1)
 shadow_size = 3
 shadow_offset = Vector2(3, 3)
 
@@ -31,5 +37,15 @@ offset_top = 242.0
 offset_right = 716.0
 offset_bottom = 325.0
 theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_huqjx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_otqub")
 text = "Play"
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = -126.0
+offset_top = -157.0
+offset_right = 433.0
+offset_bottom = -66.0
+theme_override_font_sizes/font_size = 60
+text = "Cambio Card Game"
