@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dsla0lw2d4yin"]
+[gd_scene load_steps=10 format=3 uid="uid://dsla0lw2d4yin"]
 
 [ext_resource type="Script" uid="uid://b5u44rxnxp33d" path="res://Player/Card UI/Sample/player_card.gd" id="1_f21ia"]
 [ext_resource type="Texture2D" uid="uid://hfqvt8lqeoqe" path="res://Player/Card UI/Sample/poker_card.png" id="2_euo3u"]
-[ext_resource type="Script" uid="uid://dif0uvubml2us" path="res://Scenes/card_base.gd" id="3_80v80"]
 [ext_resource type="Script" uid="uid://cncw1rp77m6jh" path="res://Scenes/suit.gd" id="4_euo3u"]
 [ext_resource type="Script" uid="uid://crx2kbq1tpgbv" path="res://Scenes/number.gd" id="4_ptnku"]
 [ext_resource type="Texture2D" uid="uid://ca0dlhfxoekse" path="res://Player/Card UI/Sample/button.png" id="5_v4ex7"]
@@ -45,7 +44,6 @@ patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
-script = ExtResource("3_80v80")
 
 [node name="TextureRect" type="TextureRect" parent="Player_Card"]
 offset_left = 434.0
