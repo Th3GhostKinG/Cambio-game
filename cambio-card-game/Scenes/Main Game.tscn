@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpq1fnwfa4fba"]
+[gd_scene load_steps=4 format=3 uid="uid://cpq1fnwfa4fba"]
 
 [ext_resource type="Script" uid="uid://b1hbw34xw1vh5" path="res://Scenes/game_manager.gd" id="1_y4wcj"]
 [ext_resource type="PackedScene" uid="uid://0a7g56m7vsb7" path="res://player_card.tscn" id="2_5y7al"]
+[ext_resource type="PackedScene" uid="uid://b1x35gpe1iabs" path="res://draw_card.tscn" id="3_5y7al"]
 
 [node name="MainGame" type="Node2D"]
 
@@ -30,3 +31,7 @@ game_manager = NodePath("../GameManager")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(730, 540)
 zoom = Vector2(0.65, 0.65)
+
+[node name="Draw_Card" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("3_5y7al")]
+position = Vector2(1341, 117)
+game_manager = NodePath("../GameManager")

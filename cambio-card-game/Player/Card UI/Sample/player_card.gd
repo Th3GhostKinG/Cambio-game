@@ -16,12 +16,51 @@ func _init() -> void:
 	
 	
 func _ready() -> void:
-	shown = true
+	shown = false
 	suit = $TextureRect
 	numberLabel1 = $Label
 	numberLabel2 = $Label2
 	card_base = $NinePatchRect
 	card_base.image = "res://Player/Card UI/Sample/poker_card.png"
+	_update_hand()
+	suit.image = suitImage
+	numberLabel1.color = fontColor
+	numberLabel2.color = fontColor
+	_cover()
+func _flip() -> void:
+	if game_manager.curState == game_manager.STATES.DRAW: #only used for testing
+		shown = !shown
+		if shown:
+			card_base.image = "res://Player/Card UI/Sample/poker_card.png"
+			suit.image = suitImage;
+			if cardNum >= 11:
+				match cardNum:
+					11:
+						numberLabel1.number = "J"
+						numberLabel2.number = "J"
+					12:
+						numberLabel1.number = "Q"
+						numberLabel2.number = "Q"
+					13:
+						numberLabel1.number = "K"
+						numberLabel2.number = "K"
+			else:
+				numberLabel1.number = str(cardNum);
+				numberLabel2.number = str(cardNum);
+		else:
+			_cover()
+	elif game_manager.curState == game_manager.STATES.ACTION:
+		game_manager.playerHand[player_hand_number] = game_manager.cards.pop_front()
+		_update_hand()
+		numberLabel1.color = fontColor
+		numberLabel2.color = fontColor
+		game_manager.curState = game_manager.STATES.SPECIAL
+func _cover():
+	card_base.image = "res://Player/Card UI/Sample/poker_card_flipped.png"
+	suit.image = null;
+	numberLabel1.number = "";
+	numberLabel2.number = "";
+func _update_hand():
 	match game_manager.playerHand[player_hand_number].getCardSuit():
 		CARD.CARDSUIT.SPADES:
 			suitImage = "res://Player/Card UI/Sample/spades.png"
@@ -36,30 +75,4 @@ func _ready() -> void:
 			suitImage = "res://Player/Card UI/Sample/clubs.png"
 			fontColor = Color.BLACK
 	cardNum = game_manager.playerHand[player_hand_number].cardNumber
-	if cardNum >= 11:
-		numberLabel1.number = String.chr("J".unicode_at(0)+cardNum-11);
-		numberLabel2.number = String.chr("J".unicode_at(0)+cardNum-11);
-	else:
-		numberLabel1.number = str(cardNum);
-		numberLabel2.number = str(cardNum);
-	suit.image = suitImage
-	numberLabel1.color = fontColor
-	numberLabel2.color = fontColor
-func _flip() -> void:
-	shown = !shown
-	if shown:
-		card_base.image = "res://Player/Card UI/Sample/poker_card.png"
-		suit.image = suitImage;
-		if cardNum >= 11:
-			numberLabel1.number = String.chr("J".unicode_at(0)+cardNum-11);
-			numberLabel2.number = String.chr("J".unicode_at(0)+cardNum-11);
-		else:
-			numberLabel1.number = str(cardNum);
-			numberLabel2.number = str(cardNum);
-	else:
-		card_base.image = "res://Player/Card UI/Sample/poker_card_flipped.png"
-		suit.image = null;
-		numberLabel1.number = "";
-		numberLabel2.number = "";
-		
 #func _process(delta: float) -> void:
