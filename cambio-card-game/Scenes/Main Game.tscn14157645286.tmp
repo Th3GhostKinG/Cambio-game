@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpq1fnwfa4fba"]
+
+[ext_resource type="Script" uid="uid://b1hbw34xw1vh5" path="res://Scenes/game_manager.gd" id="1_y4wcj"]
+[ext_resource type="PackedScene" uid="uid://0a7g56m7vsb7" path="res://player_card.tscn" id="2_5y7al"]
+
+[node name="MainGame" type="Node2D"]
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("1_y4wcj")
+
+[node name="Player_Card" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("2_5y7al")]
+position = Vector2(428, 555)
+game_manager = NodePath("../GameManager")
+
+[node name="Player_Card2" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("2_5y7al")]
+position = Vector2(723, 594)
+player_hand_number = 1
+game_manager = NodePath("../GameManager")
+
+[node name="Player_Card3" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("2_5y7al")]
+position = Vector2(491, 216)
+player_hand_number = 2
+game_manager = NodePath("../GameManager")
+
+[node name="Player_Card4" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("2_5y7al")]
+position = Vector2(780, 286)
+player_hand_number = 3
+game_manager = NodePath("../GameManager")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(730, 540)
+zoom = Vector2(0.65, 0.65)
