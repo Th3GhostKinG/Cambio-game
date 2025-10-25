@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpq1fnwfa4fba"]
+[gd_scene load_steps=5 format=3 uid="uid://cpq1fnwfa4fba"]
 
 [ext_resource type="Script" uid="uid://b1hbw34xw1vh5" path="res://Scenes/game_manager.gd" id="1_y4wcj"]
 [ext_resource type="PackedScene" uid="uid://0a7g56m7vsb7" path="res://player_card.tscn" id="2_5y7al"]
 [ext_resource type="PackedScene" uid="uid://b1x35gpe1iabs" path="res://draw_card.tscn" id="3_5y7al"]
+[ext_resource type="PackedScene" uid="uid://btihap8t2q01o" path="res://bot_one_card.tscn" id="4_1x85s"]
 
 [node name="MainGame" type="Node2D"]
 
@@ -10,21 +11,21 @@
 script = ExtResource("1_y4wcj")
 
 [node name="Player_Card" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("2_5y7al")]
-position = Vector2(428, 555)
+position = Vector2(424, 737)
 game_manager = NodePath("../GameManager")
 
 [node name="Player_Card2" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("2_5y7al")]
-position = Vector2(723, 594)
+position = Vector2(667, 738)
 player_hand_number = 1
 game_manager = NodePath("../GameManager")
 
 [node name="Player_Card3" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("2_5y7al")]
-position = Vector2(491, 216)
+position = Vector2(425, 423)
 player_hand_number = 2
 game_manager = NodePath("../GameManager")
 
 [node name="Player_Card4" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("2_5y7al")]
-position = Vector2(780, 286)
+position = Vector2(671, 429)
 player_hand_number = 3
 game_manager = NodePath("../GameManager")
 
@@ -33,5 +34,32 @@ position = Vector2(730, 540)
 zoom = Vector2(0.65, 0.65)
 
 [node name="Draw_Card" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("3_5y7al")]
-position = Vector2(1341, 117)
+position = Vector2(1367, 96)
+game_manager = NodePath("../GameManager")
+
+[node name="Bot_One_Card1" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("4_1x85s")]
+position = Vector2(1234, 778)
+scale = Vector2(0.7, 0.7)
+bot_num = 1
+game_manager = NodePath("../GameManager")
+
+[node name="Bot_One_Card2" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("4_1x85s")]
+position = Vector2(1421, 777)
+scale = Vector2(0.7, 0.7)
+player_hand_number = 1
+bot_num = 1
+game_manager = NodePath("../GameManager")
+
+[node name="Bot_One_Card3" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("4_1x85s")]
+position = Vector2(1242, 557)
+scale = Vector2(0.7, 0.7)
+player_hand_number = 2
+bot_num = 1
+game_manager = NodePath("../GameManager")
+
+[node name="Bot_One_Card4" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("4_1x85s")]
+position = Vector2(1422, 558)
+scale = Vector2(0.7, 0.7)
+player_hand_number = 3
+bot_num = 1
 game_manager = NodePath("../GameManager")

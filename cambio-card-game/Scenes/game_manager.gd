@@ -4,7 +4,7 @@ var playerHand: Array[CARD] = [null, null, null, null]
 var botOneHand: Array[CARD] = [null, null, null, null]
 var botTwoHand: Array[CARD] = [null, null, null, null]
 var botThreeHand: Array[CARD] = [null, null, null, null]
-enum STATES {DRAW, ACTION, SPECIAL, OTHERSTURN}
+enum STATES {DRAW, ACTION, SPECIAL, OTHERSTURN} #special includes stealing cards
 var curState = STATES.DRAW
 var numbers: Array[float]
 var cards: Array[CARD]

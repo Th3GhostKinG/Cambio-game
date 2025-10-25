@@ -1,13 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1x35gpe1iabs"]
+[gd_scene load_steps=13 format=3 uid="uid://btihap8t2q01o"]
 
-[ext_resource type="Script" uid="uid://ca8aiypdt04kw" path="res://draw_card.gd" id="1_puw70"]
-[ext_resource type="Texture2D" uid="uid://hfqvt8lqeoqe" path="res://Player/Card UI/Sample/poker_card.png" id="2_fb87p"]
-[ext_resource type="Script" uid="uid://dif0uvubml2us" path="res://Scenes/card_base.gd" id="3_315de"]
-[ext_resource type="Script" uid="uid://cncw1rp77m6jh" path="res://Scenes/suit.gd" id="4_o7q3f"]
-[ext_resource type="Script" uid="uid://crx2kbq1tpgbv" path="res://Scenes/number.gd" id="5_672ru"]
-[ext_resource type="Texture2D" uid="uid://ca0dlhfxoekse" path="res://Player/Card UI/Sample/button.png" id="6_7jc0b"]
-[ext_resource type="Texture2D" uid="uid://bj3tod0qyojyl" path="res://Player/Card UI/Sample/button_pressed.png" id="7_lnxdk"]
-[ext_resource type="Script" uid="uid://b6jomkcniw43r" path="res://Scenes/texture_button.gd" id="8_ns5xl"]
+[ext_resource type="Script" uid="uid://bfe25i1ijqycr" path="res://bot_card.gd" id="1_gblyj"]
+[ext_resource type="Texture2D" uid="uid://hfqvt8lqeoqe" path="res://Player/Card UI/Sample/poker_card.png" id="2_oeuqp"]
+[ext_resource type="Script" uid="uid://dif0uvubml2us" path="res://Scenes/card_base.gd" id="3_h1yy1"]
+[ext_resource type="Script" uid="uid://cncw1rp77m6jh" path="res://Scenes/suit.gd" id="4_kvkec"]
+[ext_resource type="Script" uid="uid://crx2kbq1tpgbv" path="res://Scenes/number.gd" id="5_md0w6"]
+[ext_resource type="Texture2D" uid="uid://ca0dlhfxoekse" path="res://Player/Card UI/Sample/button.png" id="6_exsdp"]
+[ext_resource type="Texture2D" uid="uid://bj3tod0qyojyl" path="res://Player/Card UI/Sample/button_pressed.png" id="7_pt7bt"]
+[ext_resource type="Script" uid="uid://b6jomkcniw43r" path="res://Scenes/texture_button.gd" id="8_74gao"]
 
 [sub_resource type="FontFile" id="FontFile_v4ex7"]
 subpixel_positioning = 0
@@ -52,24 +52,24 @@ cache/0/16/0/scale = 1.0
 font = SubResource("FontFile_ypt8g")
 font_size = 32
 
-[node name="Draw_Card" type="Node2D"]
-script = ExtResource("1_puw70")
+[node name="Player_Card" type="Node2D"]
+script = ExtResource("1_gblyj")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 offset_right = 205.0
 offset_bottom = 272.0
-texture = ExtResource("2_fb87p")
+texture = ExtResource("2_oeuqp")
 patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
-script = ExtResource("3_315de")
+script = ExtResource("3_h1yy1")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 205.0
 offset_bottom = 272.0
 expand_mode = 1
-script = ExtResource("4_o7q3f")
+script = ExtResource("4_kvkec")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 152.0
@@ -79,7 +79,7 @@ offset_bottom = 56.0
 text = "A"
 label_settings = SubResource("LabelSettings_35olq")
 horizontal_alignment = 1
-script = ExtResource("5_672ru")
+script = ExtResource("5_md0w6")
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 52.0
@@ -90,15 +90,15 @@ rotation = 3.14159
 text = "A"
 label_settings = SubResource("LabelSettings_8iojk")
 horizontal_alignment = 1
-script = ExtResource("5_672ru")
+script = ExtResource("5_md0w6")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_right = 205.0
 offset_bottom = 272.0
-texture_normal = ExtResource("6_7jc0b")
-texture_hover = ExtResource("7_lnxdk")
+texture_normal = ExtResource("6_exsdp")
+texture_hover = ExtResource("7_pt7bt")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("8_ns5xl")
+script = ExtResource("8_74gao")
 
 [connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
