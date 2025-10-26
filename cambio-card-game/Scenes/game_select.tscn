@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxt1k72qsdoix"]
+
+[ext_resource type="Texture2D" uid="uid://b52p6elnd3xjb" path="res://Player/Card UI/Sample/poker_card_flipped.png" id="1_x1je1"]
+[ext_resource type="Texture2D" uid="uid://hfqvt8lqeoqe" path="res://Player/Card UI/Sample/poker_card.png" id="2_am1i2"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_awayb"]
+orientation = 2
+
+[sub_resource type="Gradient" id="Gradient_mx1rd"]
+colors = PackedColorArray(0, 0.564706, 0.317647, 1, 0.305882, 0.796078, 0.392157, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jww2h"]
+gradient = SubResource("Gradient_mx1rd")
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 0)
+
+[node name="Game_select" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(900, 510.606)
+mesh = SubResource("PlaneMesh_awayb")
+texture = SubResource("GradientTexture2D_jww2h")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = -484.0
+offset_top = -204.0
+offset_right = -100.0
+offset_bottom = 372.0
+keep_pressed_outside = true
+texture_normal = ExtResource("1_x1je1")
+texture_pressed = ExtResource("2_am1i2")
+texture_hover = ExtResource("2_am1i2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureButton"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 103.0
+offset_right = 331.0
+offset_bottom = 163.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "Single Player"
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 100.0
+offset_top = -204.0
+offset_right = 484.0
+offset_bottom = 372.0
+texture_normal = ExtResource("1_x1je1")
+texture_hover = ExtResource("2_am1i2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.65, 0.65)
